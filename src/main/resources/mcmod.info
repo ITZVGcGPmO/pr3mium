@@ -1,0 +1,14 @@
+[
+{
+  "modid": "pr3mium",
+  "name": "pr3mium",
+  "description": "pr3mium mod description",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/ITZVGcGPmO/pr3mium",
+  "authorList": ["ITZVGcGPmO"],
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
