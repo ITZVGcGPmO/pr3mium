@@ -7,14 +7,14 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.codec.binary.Base64;
 
-import static io.github.itzvgcgpmo.pr3mium.pr3mium.*;
+import static io.github.itzvgcgpmo.pr3mium.Pr3mium.*;
 
 
 public class RegOrLoginChatEvent {
     public static final RegOrLoginChatEvent instance = new RegOrLoginChatEvent();
     public boolean canRegister;
     public boolean canLogin;
-    public boolean hidemsg = true;
+    public boolean hidemsg = false;
     private String uniquepwd;
 
     @SubscribeEvent
@@ -37,10 +37,12 @@ public class RegOrLoginChatEvent {
             } else if (canRegister && msg.matches(regex_reg1)) {
                 Minecraft.getMinecraft().player.sendChatMessage("/register "+uniquepwd);
             } else { // if no command completed
+                if (msg.startsWith("[SkinsRestorer]") && hidemsg) // hide `[SkinsRestorer]`
+                    event.setCanceled(true);
                 return;
             } // if login or register command completed
             canRegister = false;
-            if (hidemsg)
+            if (hidemsg) // hide messages that match `/login` or `/register`
                 event.setCanceled(true);
         } else {
             plMsg("add password in mod config and relog");
