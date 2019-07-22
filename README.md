@@ -1,5 +1,5 @@
 # pr3mium
-A premium minecraft mod
+A pr3mium minecraft mod
 
 - `/register`
 - `/login`
