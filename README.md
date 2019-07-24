@@ -1,6 +1,6 @@
 # pr3mium
-A pr3mium minecraft mod
+A minecraft mod; Automatic login, register, and skin setting for servers running in "offline" mode.
 
-- `/register`
-- `/login`
-- `/skin`
+- `/register <password>`
+- `/login <password>`
+- `/skin <url>`
